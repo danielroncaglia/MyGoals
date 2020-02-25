@@ -1,0 +1,239 @@
+.todo-list {
+  align-items: center;
+  display: flexbox;
+  padding: 200px;
+  padding-top: 50px;
+  width: 600px;
+}
+.todo-create-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.todo-actions {
+  display: flex;
+  align-items: center;
+}
+.todo-create-input {
+  font-size: 18px;
+  font-family: roboto;
+  padding: 11px 15px;
+  min-width: 150px;
+  display: flex;
+  box-shadow: 0px 0px 0px 2px lightpink;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.todo-create-input:hover, .todo-create-input:active, .todo-create-input:focus {
+  box-shadow: 0px 0px 0px 2px red;
+}
+
+.todo-item {
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 43px;
+}
+.todo-list-title {
+  font-size: 20px;
+  font-family: roboto;
+  color: black;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+  margin-left: 45px;
+  width: 470px;
+}
+.todo-list-title:hover span[contenteditable="false"]:before {
+  content: 'edit';
+  position: absolute;
+  top: -6px;
+  left: 11px;
+  font-size: 11px;
+  font-weight: 300;
+  color: lightpink;
+  letter-spacing: 1px;
+}
+.mobile-toggle {
+  display: none;
+}
+.desktop-toggle {
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: inline-flex;
+  }
+  .desktop-toggle {
+    display: none;
+  }
+  .todo-list {
+    padding: 15px;
+    padding-top: 10px;
+    width: auto;
+  }
+  .todo-list h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    max-width: 95%;
+  }
+  .todo-list-title {
+    font-size: 16px;
+    max-width: 80%;
+    margin-left: 40px;
+  }
+  .todo-create-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  .todo-create-input {
+    appearance: none;
+    border: 1px solid lightpink;
+    font-size: 16px;
+    margin-bottom: 15px;
+    min-width: 85%;
+  }
+  .todo-item button {
+    padding: 4px 12px;
+    font-size: 14px;
+    margin-bottom: 0px;
+    min-width: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .todo-list-title:hover span[contenteditable="false"]:before {
+    content: ''
+  }
+  .todo-list-title:hover span[contenteditable="true"]:before {
+    content: 'edit';
+    position: absolute;
+    top: -20px;
+    left: 9px;
+    font-size: 11px;
+    font-weight: 300;
+    color: lightpink;
+    letter-spacing: 1px;
+  }
+}
+
+.todo {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  padding-right: 5px;
+}
+.todo__state {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.todo__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  margin: auto;
+  fill: none;
+  stroke:lightpink;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  z-index: 1;
+}s
+
+.todo__state:checked ~ .todo-list-title {
+  text-decoration: line-through;
+}
+
+.todo__box {
+  stroke-dasharray: 56.1053, 56.1053;
+  stroke-dashoffset: 0;
+  transition-delay: 0.16s;
+}
+.todo__check {
+  stroke: lightpink;
+  stroke-dasharray: 9.8995, 9.8995;
+  stroke-dashoffset: 9.8995;
+  transition-duration: 0.25s;
+}
+
+.todo__state:checked ~ .todo__icon .todo__box {
+  stroke-dashoffset: 56.1053;
+  transition-delay: 0s;
+  stroke-dasharray: 56.1053, 56.1053;
+  stroke-dashoffset: 0;
+  stroke: lightpink;
+}
+
+.todo__state:checked ~ .todo__icon .todo__check {
+  stroke-dashoffset: 0;
+  transition-delay: 0s;
+}
+
+/* header */
+
+.header {
+  background-color:lightpink;
+  font-family: roboto;
+  height: 90px;
+  color:   black;
+  padding-left: 60px;
+}
+.header-left-nav {
+  display: inline;
+  align-content: center;
+}
+.header-title {
+  font-size: 32px;
+  margin: 0px;
+}
+.header-title2 {
+  font-size: 22px;
+  margin: 0px;
+}
+
+/* footer */
+
+.footer {
+  background-color:lightpink;
+  font-family: roboto;
+  height: 120px;
+  color: black;
+  padding-left: 60px;
+}
+.footer-left-nav {
+  display: flex;
+}
+.footer-text {
+  font-size: 18px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+/* editable */
+
+.editable {
+  cursor: text;
+  display: block;
+  padding: 10px;
+  width: 95%;
+}
+.editable[contenteditable="true"] {
+  outline: 3px solid #efefef;
+}

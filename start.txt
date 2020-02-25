@@ -1,0 +1,5 @@
+set FAUNADB_SERVER_SECRET=fnADkpdakLACEy5pEiD8vjEONclq327XrjoNoz1f
+
+npm run bootstrap
+
+npm start
